@@ -3,6 +3,7 @@
 namespace Controller;
 
 use Illuminate\Support\Facades\DB;
+use Model\BookInUse;
 use Src\View;
 use Model\Book;
 use Src\Request;
@@ -49,7 +50,7 @@ class Site
 
     public function books(Request $request): string
     {
-        $books = Book::all();
+        $books = Book::orderBy('spros', 'desc')->get();
         return (new View())->render('site.books', ['books' => $books]);
     }
 
@@ -63,5 +64,13 @@ class Site
     {
         $bookinfo = Book::where('id', $request->id)->get();
         return (new View())->render('site.bookinfo', ['bookinfo'=>$bookinfo]);
+    }
+
+    public function givebook(Request $request): string
+    {
+        if ($request->method==='POST' && BookInUse::create($request->all()) && Book::increment('spros'));
+        $givebook = Book::all();
+        $giveuser = User::all();
+        return new View('site.givebook', ['givebook' => $givebook, 'giveuser' => $giveuser]);
     }
 }

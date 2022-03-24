@@ -10,3 +10,4 @@ Route::add('GET', '/account', [Controller\Site::class, 'account'])->middleware('
 Route::add('GET', '/books', [Controller\Site::class, 'books']);
 Route::add(['GET', 'POST'], '/addbook', [Controller\Site::class, 'addbook'])->middleware('auth');
 Route::add('GET', '/book', [Controller\Site::class, 'bookinfo']);
+Route::add(['GET', 'POST'], '/givebook', [Controller\Site::class, 'givebook'])->middleware('auth');
