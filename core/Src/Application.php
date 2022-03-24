@@ -17,8 +17,11 @@ class Application
 
     public function __construct(Settings $settings)
     {
+        //Привязываем класс со всеми найстройками приложения
         $this->settings = $settings;
-        $this->route = new Route($this->settings->getRootPath());
+        //Привязываем класс маршрутизации с установкой префиксов
+        $this->route = Route::single()->setPrefix($this->settings->getRootPath());
+        //создаем класс менеджера для базы данных
         $this->dbManager = new Capsule();
         //Создаем класс для аутентификации на основе настроек приложения
         $this->auth = new $this->settings->app['auth'];

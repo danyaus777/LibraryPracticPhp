@@ -20,7 +20,7 @@ class Site
     public function signup(Request $request):string
     {
         if ($request->method==='POST' && User::create($request->all())) {
-            app()->route->redirect('/index');
+            app()->route->redirect('/login');
         }
         return new View('site.signup');
     }
@@ -31,7 +31,7 @@ class Site
             return new View('site.login');
         }
         if (Auth::attempt($request->all())) {
-            app()->route->redirect('/index');
+            app()->route->redirect('/account');
         }
         return new View('site.login', ['message' => 'Неправильные логин или пароль']);
     }
@@ -44,12 +44,24 @@ class Site
 
     public function account(): string
     {
-        return new View('site.hello', ['message' => 'Тут наша страница пользователя']);
+        return new View('site.account');
     }
 
     public function books(Request $request): string
     {
-        $books = Book::where('id', $request->id)->get();
+        $books = Book::all();
         return (new View())->render('site.books', ['books' => $books]);
+    }
+
+    public function addbook(Request $request): string
+    {
+        if ($request->method==='POST' && Book::create($request->all()));
+        return new View('site.addbook');
+    }
+
+    public function bookinfo(Request $request): string
+    {
+        $bookinfo = Book::where('id', $request->id)->get();
+        return (new View())->render('site.bookinfo', ['bookinfo'=>$bookinfo]);
     }
 }

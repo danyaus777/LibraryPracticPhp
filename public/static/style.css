@@ -1,0 +1,240 @@
+/* *Обнуление */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    line-height: 1;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
+    color: #616161;
+;
+}
+
+/* ----------- */
+
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+[class*="__container"] {
+    max-width: 1087px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+.header__container {
+    display: flex;
+    min-height: 114px;
+    align-items: center;
+}
+
+.header__container a{
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.header__container a:nth-child(3){
+    margin-left: auto;
+}
+
+h2{
+    font-size: 24px;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.form__container form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__container input{
+    font-size: 15px;
+    border: 1px solid #999;
+    width: 220px;
+    height: 30px;
+    margin-left: 15px;
+    padding-left: 10px;
+    outline: 0;
+}
+
+.form__container input[type='text'] {
+    margin-left: 26px;
+}
+
+.form__container label{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.form__container button {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 120px;
+    height: 35px;
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form__container button:hover{
+    background-color: #0c6e0c;
+    transition: 0.3s;
+}
+
+.signupform__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.signupform__container form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: end;
+}
+
+.signupform__container input{
+    font-size: 15px;
+    border: 1px solid #999;
+    width: 220px;
+    height: 30px;
+    margin-left: 15px;
+    padding-left: 10px;
+    outline: 0;
+}
+
+.signupform__container label{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.signupform__container button {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 30px;
+    width: 180px;
+    height: 35px;
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signupform__container button:hover{
+    background-color: #0c6e0c;
+    transition: 0.3s;
+}
+
+.info__container {
+    margin-top: 50px;
+}
+
+.title_info__container {
+    display: flex;
+    justify-content: center;
+}
+
+.info__container h3 {
+    font-size: 20px;
+}
+
+.book_info__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.book_info__container h4{
+    font-size: 16px;
+}
+
+.footer__container {
+    display: flex;
+}
+
+.footer__container a{
+    flex: 0 0 auto;
+}
+
+.title_addbook__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.allbook_title__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.allbook_title__container h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.booklist__container {
+    display: flex;
+    margin-top: 30px;
+}
+
+.booklist__container li{
+    padding-top: 10px;
+    font-size: 16px;
+}
+
